@@ -22,5 +22,6 @@ resource "aws_instance" "ganesh-2022" {
   systemctl restart sshd.service
   useradd ganesh
   echo "test@123"|passwd --stdin ganesh
+  echo "ganesh ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/90-cloud-init-users
   EOF
 }
