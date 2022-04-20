@@ -11,6 +11,6 @@ variable "image_id" {
 variable "tags" {
   type = map(any)
   default = {
-    name = "ganesh2022-${count.index}"
+    name = "ganesh2022"
   }
 }
