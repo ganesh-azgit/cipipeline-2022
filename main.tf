@@ -17,10 +17,10 @@ resource "aws_instance" "ganesh-2022" {
   ]
   user_data = <<EOF
   #!/bin/bash
-  useradd ganesh
-  echo "test@123"|passwd --stdin ganesh
   sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
   sed -i 's/UsePAM no/UsePAM yes/' /etc/ssh/sshd_config
   systemctl restart sshd.service
+  useradd ganesh
+  echo "test@123"|passwd --stdin ganesh
   EOF
 }
