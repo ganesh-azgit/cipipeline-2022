@@ -11,4 +11,11 @@ resource "aws_instance" "ganesh-2022" {
   tags          = {
     Name = "ganesh-2022-${count.index}"
   }
+  user_data = <<EOF
+  #!/bin/bash
+  useradd ganesh
+  echo "test@123"|passwd --stdin ganesh
+  sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
+  systemctl restart sshd.service
+  EOF
 }
