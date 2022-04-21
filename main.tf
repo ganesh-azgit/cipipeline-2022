@@ -11,6 +11,7 @@ resource "aws_instance" "ganesh-2022" {
   tags          = {
     Name = "ganesh-2022-${count.index}"
   }
+  vpc_id = "vpc-22285e49"
   subnet_id = "subnet-41bb870d"
   vpc_security_group_ids = [
     "sg-0c942cb0e2ef565d5"
