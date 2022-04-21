@@ -14,3 +14,8 @@ variable "tags" {
     name = "ganesh2022"
   }
 }
+
+variable "vpc" {
+  type = string
+  default = "vpc-22285e49"
+}
