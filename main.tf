@@ -4,7 +4,7 @@ provider "aws" {
 
 
 resource "aws_instance" "ganesh-2022" {
-  count         = 2
+  count         = 3
   ami           = var.image_id
   instance_type = var.instance_type
   availability_zone = "us-east-2c"
